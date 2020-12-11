@@ -1,0 +1,8 @@
+mutation CreateMusicMutation($title: String!) {
+    createMusic(input: {
+        title: $title
+    }) {
+        id
+        title
+    }
+}
