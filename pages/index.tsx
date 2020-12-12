@@ -1,7 +1,24 @@
+import React, { useState } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import { useMutation, useQuery } from '@apollo/client';
+import CREATE_MUSIC from '../graphql/createMusicMutation.graphql';
+import MUSIC_QUERY from '../graphql/musicQuery.graphql';
 
 export default function Home() {
+  const [id, setId] = useState();
+
+  const [createMusic] = useMutation(CREATE_MUSIC);
+  const { data } = useQuery(MUSIC_QUERY, {
+    variables: {
+      id,
+    },
+  });
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const result = await createMusic({ variables: { title: '김정명 바보' } });
+    setId(result.data.createMusic.id);
+  };
   return (
     <div className={styles.container}>
       <Head>
@@ -11,8 +28,16 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          {data ? data.music.title : 'Empty'}
+          <br />
+          <small>
+            {data ? data.music.id : ''}
+          </small>
         </h1>
+
+        <form onSubmit={onSubmit}>
+          <button type="submit">Run</button>
+        </form>
 
         <p className={styles.description}>
           Get started by editing{' '}
