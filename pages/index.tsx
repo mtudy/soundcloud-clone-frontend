@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 import { useMutation, useQuery } from '@apollo/client';
+import { Button } from 'antd';
+import styles from '../styles/Home.module.css';
 import CREATE_MUSIC from '../graphql/createMusicMutation.graphql';
 import MUSIC_QUERY from '../graphql/musicQuery.graphql';
-import { Button } from 'antd';
 
-export default function Home() {
+export default function Home(): JSX.Element {
   const [id, setId] = useState();
 
   const [createMusic] = useMutation(CREATE_MUSIC);
