@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import 'antd/dist/antd.css';
 
 // import App from "next/app";
 import type { AppProps /* , AppContext */ } from 'next/app';

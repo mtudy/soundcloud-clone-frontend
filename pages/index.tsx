@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css';
 import { useMutation, useQuery } from '@apollo/client';
 import CREATE_MUSIC from '../graphql/createMusicMutation.graphql';
 import MUSIC_QUERY from '../graphql/musicQuery.graphql';
+import { Button } from 'antd';
 
 export default function Home() {
   const [id, setId] = useState();
@@ -36,7 +37,7 @@ export default function Home() {
         </h1>
 
         <form onSubmit={onSubmit}>
-          <button type="submit">Run</button>
+          <Button type="primary">Run</Button>
         </form>
 
         <p className={styles.description}>
