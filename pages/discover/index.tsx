@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-
+import { Image } from 'antd';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper.scss';
-
-import { Button } from 'antd';
+import styles from '../styles/Discover.module.css';
+import 'swiper/swiper-bundle.min.css';
 
 export default function Discover() {
     const data = [
@@ -12,13 +11,53 @@ export default function Discover() {
             name: 'Jazz',
             playlists: [
                 {
-                    thumbnail: '',
+                    thumbnail: '/vercel.svg',
                     name: 'playlist',
                     user: {
                         id: 1,
                         name: 'jeongmyeong'
                     }
-                }
+                },
+                {
+                    thumbnail: '/vercel.svg',
+                    name: 'playlist',
+                    user: {
+                        id: 1,
+                        name: 'jeongmyeong'
+                    }
+                },
+                {
+                    thumbnail: '/vercel.svg',
+                    name: 'playlist',
+                    user: {
+                        id: 1,
+                        name: 'jeongmyeong'
+                    }
+                },
+                {
+                    thumbnail: '/vercel.svg',
+                    name: 'playlist',
+                    user: {
+                        id: 1,
+                        name: 'jeongmyeong'
+                    }
+                },
+                {
+                    thumbnail: '/vercel.svg',
+                    name: 'playlist',
+                    user: {
+                        id: 1,
+                        name: 'jeongmyeong'
+                    }
+                },
+                {
+                    thumbnail: '/vercel.svg',
+                    name: 'playlist',
+                    user: {
+                        id: 1,
+                        name: 'jeongmyeong'
+                    }
+                },
             ]
         }
     ]
@@ -26,29 +65,30 @@ export default function Discover() {
 
     return (
         <div>
-            ㄹㅁㅇㄴㄹㅁㅇㄴ
-            <Swiper
-                spaceBetween={50}
-                slidesPerView={3}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
-            >
-                {data.map((tag, i) => {
-                    return (
+            {data.map((tag, i) => {
+                return (
+                    <section>
+                        <h3>{ tag.name }</h3>
+
                         <Swiper
                             spaceBetween={50}
                             slidesPerView={3}
-                            onSlideChange={() => console.log('slide change')}
-                            onSwiper={(swiper) => console.log(swiper)}
                         >
                             {tag.playlists.map((playlist, j) => {
                                 return (<SwiperSlide>
+                                    <div>
+                                        <Image
+                                            width={200}
+                                            src={ playlist.thumbnail }
+                                        />
+                                    </div>
                                     { playlist.name }
                                 </SwiperSlide>);
                             })}
-                        </Swiper>);
-                })}
-            </Swiper>
+                        </Swiper>
+                    </section>
+                );
+            })}
         </div>
     );
 }
