@@ -1,17 +1,8 @@
 import React from 'react';
-import { Layout as AntdLayout } from 'antd';
-const {Header, Sider, Content } = AntdLayout;
+import Header from './Header'
 
-export default function Layout(props: any) {
+export default function Layout(props: { children: Object }) {
     return (
-        <AntdLayout>
-            <Header>Header</Header>
-            <AntdLayout>
-                <Content>
-                    { props.children }
-                </Content>
-                <Sider>Sider</Sider>
-            </AntdLayout>
-        </AntdLayout>
+        <Header>Header</Header>
     );
 }
