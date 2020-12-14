@@ -21,7 +21,7 @@ const menu = (
 );
 
 export default function Layout() {
-    const onSearch = value => console.log(value);
+    const onSearch = (value: string) => console.log(value);
 
     return (
         <header className={styles['global-header']}>
