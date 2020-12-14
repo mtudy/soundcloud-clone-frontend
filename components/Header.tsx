@@ -1,8 +1,9 @@
 import React from "react";
 import { Input } from 'antd';
 import { Menu, Dropdown } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+import { EllipsisOutlined } from '@ant-design/icons';
 import styles from '../styles/components/Header.module.scss';
+import { Button } from 'antd';
 
 const { Search } = Input;
 
@@ -23,9 +24,14 @@ export default function Layout() {
     const onSearch = value => console.log(value);
 
     return (
-        <header className={styles.global__header}>
-            <nav>
+        <header className={styles['global-header']}>
+            <nav className={styles['global-header--nav']}>
                 <ul>
+                    <li>
+                        <a href="#">
+                            Logo
+                        </a>
+                    </li>
                     <li>
                         <a href="#">Home</a>
                     </li>
@@ -36,20 +42,26 @@ export default function Layout() {
                         <a href="#">Library</a>
                     </li>
                 </ul>
+
+                <Search
+                    placeholder="input search text"
+                    allowClear
+                    onSearch={onSearch}
+                    style={{ width: 330, margin: '0 1em 0 0' }}
+                />
+
+                <Button type="primary">Sign in</Button>
+
+                <Button className={styles['global-header--nav--create-button']}>Create account</Button>
+
+                <a href="#">Upload</a>
+
+                <Dropdown overlay={menu} trigger={['click']}>
+                    <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                        <EllipsisOutlined />
+                    </a>
+                </Dropdown>
             </nav>
-
-            <Search
-                placeholder="input search text"
-                allowClear
-                onSearch={onSearch}
-                style={{ width: 200, margin: '0 10px' }}
-            />
-
-            <Dropdown overlay={menu} trigger={['click']}>
-                <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                    Click me <DownOutlined />
-                </a>
-            </Dropdown>
         </header>
     );
 }
