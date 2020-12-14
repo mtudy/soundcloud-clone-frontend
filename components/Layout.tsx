@@ -1,12 +1,14 @@
 import React from 'react';
-import Header from './Header'
-import Content from './Content'
+import Header from './Header';
+import Content from './Content';
 
-export default function Layout(props: { children: Object }) {
-    return (
-        <>
-            <Header />
-            <Content>{props.children}</Content>
-        </>
-    );
+export default function Layout(props: any): JSX.Element {
+  const { children } = props;
+
+  return (
+    <>
+      <Header />
+      <Content>{children()}</Content>
+    </>
+  );
 }

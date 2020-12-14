@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 
 import type { AppProps /* , AppContext */ } from 'next/app';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import Layout from "../components/Layout";
+import Layout from '../components/Layout';
 
 const client = new ApolloClient({
   uri: 'http://localhost:8080/graphql',

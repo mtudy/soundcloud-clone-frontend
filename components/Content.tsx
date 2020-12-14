@@ -1,13 +1,14 @@
-import React from "react";
+import React from 'react';
 import styles from '../styles/components/Content.module.scss';
 
+export default function Content(props: any): JSX.Element {
+  const { children } = props;
 
-export default function Content(props: { children: Object }) {
-    return (
-        <div className={styles.wrapper}>
-            <main>{props.children}</main>
+  return (
+    <div className={styles.wrapper}>
+      <main>{children}</main>
 
-            <aside>some side text</aside>
-        </div>
-    );
+      <aside>some side text</aside>
+    </div>
+  );
 }
