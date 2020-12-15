@@ -1,0 +1,31 @@
+.wrapper {
+  padding: 30px;
+
+  section {
+    position: relative;
+    margin-bottom: 3em;
+    padding-bottom: 2.5em;
+    border-bottom: 1px solid #f2f2f2;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: #999;
+    }
+  }
+
+  h4 {
+    font-size: 0.875rem;
+    margin: 0;
+    font-weight: normal;
+    line-height: 1;
+    padding-top: 0.5em;
+  }
+
+  small {
+    color: #999;
+  }
+}

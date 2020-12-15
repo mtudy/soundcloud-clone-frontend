@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles/components/Content.module.scss';
 
-export default function Content(props: any): JSX.Element {
+export default function Content(props: { children: JSX.Element }): JSX.Element {
   const { children } = props;
 
   return (

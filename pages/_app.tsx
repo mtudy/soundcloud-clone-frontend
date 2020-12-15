@@ -1,5 +1,7 @@
-import '../styles/globals.scss';
-import 'antd/dist/antd.css';
+import '../styles/globals.css';
+import 'antd/dist/antd.compact.min.css';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
 
 import type { AppProps /* , AppContext */ } from 'next/app';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';

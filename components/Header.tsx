@@ -21,8 +21,8 @@ const menu = (
   </Menu>
 );
 
-export default function Layout() {
-  const onSearch = (value: string) => console.log(value);
+export default function Layout(): JSX.Element {
+  // const onSearch = (value: string) => console.log(value);
 
   return (
     <header className={styles['global-header']}>
@@ -47,7 +47,7 @@ export default function Layout() {
         <Search
           placeholder="input search text"
           allowClear
-          onSearch={onSearch}
+          // onSearch={onSearch}
           style={{ width: 330, margin: '0 1em 0 0' }}
         />
 
