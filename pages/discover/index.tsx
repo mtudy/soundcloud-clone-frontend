@@ -123,8 +123,7 @@ export default function Discover(): JSX.Element {
   data.forEach((tag) => {
     (() => new Swiper(`#swiper-${tag.id}`, {
       navigation: {
-
-        nextEl: `.swiper-button-prev-${tag.id}`,
+        nextEl: `.swiper-button-next-${tag.id}`,
         prevEl: `.swiper-button-prev-${tag.id}`,
       },
       slidesPerView: 'auto',
@@ -134,15 +133,15 @@ export default function Discover(): JSX.Element {
 
   return (
     <div className={styles.wrapper}>
-      {data.map((tag) => (
-        <section>
+      {data.map((tag, index) => (
+        <section key={index}>
           <h2>{tag.name}</h2>
           <p>{tag.description}</p>
 
           <div className="swiper-container" id={`swiper-${tag.id}`}>
             <div className="swiper-wrapper">
-              {tag.playlists.map((playlist) => (
-                <div className="swiper-slide" style={{ width: '20%' }}>
+              {tag.playlists.map((playlist, playlistKey) => (
+                <div key={playlistKey} className="swiper-slide" style={{ width: '20%' }}>
                   <div>
                     <Image
                       src={playlist.thumbnail}

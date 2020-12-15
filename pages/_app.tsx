@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '../styles/common/globals.scss';
 import 'antd/dist/antd.compact.min.css';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
