@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Image } from 'antd';
 import Swiper, { Navigation } from 'swiper';
 import styles from '../../styles/Discover.module.scss';
@@ -120,8 +120,8 @@ export default function Discover(): JSX.Element {
     },
   ];
 
-  data.map((tag) => {
-    new Swiper(`#swiper-${tag.id}`, {
+  data.forEach((tag) => {
+    (() => new Swiper(`#swiper-${tag.id}`, {
       navigation: {
 
         nextEl: `.swiper-button-prev-${tag.id}`,
@@ -129,7 +129,7 @@ export default function Discover(): JSX.Element {
       },
       slidesPerView: 'auto',
       spaceBetween: 20,
-    });
+    }))();
   });
 
   return (
