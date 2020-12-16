@@ -1,6 +1,9 @@
 const path = require('path')
 
 module.exports = {
+    env: {
+        GRAPHQL_SERVER_URL: process.env.GRAPHQL_SERVER_URL,
+    },
     rules: [
         {
             test: /\.less$/,
