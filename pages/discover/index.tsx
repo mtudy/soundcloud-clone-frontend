@@ -14,6 +14,7 @@ export default function Discover(): JSX.Element {
       description: 'some description',
       playlists: [
         {
+          id: 1,
           thumbnail: '/playlist-mock.jpg',
           name: 'playlist',
           user: {
@@ -22,6 +23,7 @@ export default function Discover(): JSX.Element {
           },
         },
         {
+          id: 2,
           thumbnail: '/playlist-mock.jpg',
           name: 'playlist',
           user: {
@@ -30,6 +32,7 @@ export default function Discover(): JSX.Element {
           },
         },
         {
+          id: 3,
           thumbnail: '/playlist-mock.jpg',
           name: 'playlist',
           user: {
@@ -38,6 +41,7 @@ export default function Discover(): JSX.Element {
           },
         },
         {
+          id: 4,
           thumbnail: '/playlist-mock.jpg',
           name: 'playlist',
           user: {
@@ -46,6 +50,7 @@ export default function Discover(): JSX.Element {
           },
         },
         {
+          id: 5,
           thumbnail: '/playlist-mock.jpg',
           name: 'playlist',
           user: {
@@ -54,6 +59,7 @@ export default function Discover(): JSX.Element {
           },
         },
         {
+          id: 6,
           thumbnail: '/playlist-mock.jpg',
           name: 'playlist',
           user: {
@@ -69,6 +75,7 @@ export default function Discover(): JSX.Element {
       description: 'some description',
       playlists: [
         {
+          id: 1,
           thumbnail: '/playlist-mock.jpg',
           name: 'playlist',
           user: {
@@ -77,6 +84,7 @@ export default function Discover(): JSX.Element {
           },
         },
         {
+          id: 2,
           thumbnail: '/playlist-mock.jpg',
           name: 'playlist',
           user: {
@@ -85,6 +93,7 @@ export default function Discover(): JSX.Element {
           },
         },
         {
+          id: 3,
           thumbnail: '/playlist-mock.jpg',
           name: 'playlist',
           user: {
@@ -93,6 +102,7 @@ export default function Discover(): JSX.Element {
           },
         },
         {
+          id: 4,
           thumbnail: '/playlist-mock.jpg',
           name: 'playlist',
           user: {
@@ -101,6 +111,7 @@ export default function Discover(): JSX.Element {
           },
         },
         {
+          id: 5,
           thumbnail: '/playlist-mock.jpg',
           name: 'playlist',
           user: {
@@ -109,6 +120,7 @@ export default function Discover(): JSX.Element {
           },
         },
         {
+          id: 6,
           thumbnail: '/playlist-mock.jpg',
           name: 'playlist',
           user: {
@@ -133,15 +145,15 @@ export default function Discover(): JSX.Element {
 
   return (
     <div className={styles.wrapper}>
-      {data.map((tag, index) => (
-        <section key={index}>
+      {data.map((tag) => (
+        <section key={tag.id}>
           <h2>{tag.name}</h2>
           <p>{tag.description}</p>
 
           <div className="swiper-container" id={`swiper-${tag.id}`}>
             <div className="swiper-wrapper">
-              {tag.playlists.map((playlist, playlistKey) => (
-                <div key={playlistKey} className="swiper-slide" style={{ width: '20%' }}>
+              {tag.playlists.map((playlist) => (
+                <div key={playlist.id} className="swiper-slide" style={{ width: '20%' }}>
                   <div>
                     <Image
                       src={playlist.thumbnail}
